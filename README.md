@@ -15,6 +15,8 @@ Call the class with KMeans() the following parameters are settable and the defau
 	- The number of clusters you hope to separate your data into
 - tolerance = 0.001
 	- The percentage difference the centroids can tolerate before we stop seeking improvements  
+- k_plus_plus = False 
+	- Bool which turns KMeams++ on or off 
 - max_iterations = 500
 	- Maximum number of times we try to improve centroids positioning, while tolerance level not met.   
 - verification_loops = 1
