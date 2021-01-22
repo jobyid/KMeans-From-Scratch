@@ -29,4 +29,4 @@ You can the run the following methods.
 - predict(data)
 	- Takes your data as an input and returns an array of cluster classifications 
 - plot_results(data,d1,d2,c1,c2)
-	- takes your data, and 4 coordinates for the data you want to plot. The 4 coordinates represent dimensions fo data, typically 0 and 1 are used. 
+	- takes your data, and 4 coordinates for the data you want to plot. The 4 coordinates represent dimensions fo data, typically 0 and 1 are used. returns a scatter plot of your data as classified by the best classifer loop.
