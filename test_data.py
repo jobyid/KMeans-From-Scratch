@@ -15,3 +15,4 @@ def five_d_data():
                         cluster_std=0.60,
                         random_state=0)
     return X
+
