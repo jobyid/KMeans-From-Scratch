@@ -144,6 +144,13 @@ class KMeans:
         x = MeansLoops(sum(td),self.classes, self.centroids)
         self.loops.append(x)
 
+    def fit_predict(self,data):
+        self.fit(data)
+        self.predict(data)
+    def fit_plot(self,data, d1,d2,c1,c2):
+        self.fit(data)
+        self.plot_results(data,d1,d2,c1,c2)
+
 class MeansLoops:
     def __init__(self,error_score, classes, centroids):
         self.es = error_score
