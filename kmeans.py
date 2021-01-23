@@ -86,6 +86,8 @@ class KMeans:
         self.fitted = True
         # loop through validation loops
         for x in range(self.vl):
+            self.classes.clear()
+            self.centroids.clear()
             # make centroids
             if self.k_plus:
                 self.find_centroids_plus_plus(data)
@@ -115,6 +117,7 @@ class KMeans:
                         if (d == x).all():
                             clas.append(cl)
             self.pred = clas
+            self.centroids = best.cen
             return clas
         else:
             raise Exception("Please run the fit() function before predicting")
@@ -137,9 +140,9 @@ class KMeans:
     def find_error(self):
         # sum of the mean squared
         td = []
-        for c in self.classes:
+        for cl in self.classes:
             # list of the distances from centroids
-            distances = [np.linalg.norm(c-self.centroids[c]) for c in self.centroids]
+            distances = [np.linalg.norm(cl-self.centroids[c]) for c in self.centroids]
             td += distances
         x = MeansLoops(sum(td),self.classes, self.centroids)
         self.loops.append(x)
