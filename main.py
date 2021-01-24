@@ -11,7 +11,7 @@ import kmeans as km
 @click.option("--max_it", "-m", default=500,  type=int, show_default=True, help="Max number of iterations to converge centroids, default=500")
 @click.option("--error_loops","-e", default=1,  type=int, show_default=True, help="Number of tries to get best centroid start point, default=1")
 @click.option("--plus_plus/--standard","-p/-s", default=False,show_default=True, help="Choose between standard Kmeans or Kmeans++, default is standard")
-@click.option('--file', '-f', prompt="Please provide a file path to check, file must only contain numbers string or object columns will cause an error ")
+@click.option('--file', '-f', prompt="Please provide a file path to check, file must only contain numbers string or object columns will cause an error ", help="Enter the file path, the file should be a csv and contain numbers only")
 
 def k_means_away(fit_predict, clusters, tolerance, max_it, error_loops, plus_plus, file):
     print("Now we are clustering")

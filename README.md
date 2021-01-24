@@ -29,4 +29,32 @@ You can the run the following methods.
 - predict(data)
 	- Takes your data as an input and returns an array of cluster classifications 
 - plot_results(data,d1,d2,c1,c2)
-	- takes your data, and 4 coordinates for the data you want to plot. The 4 coordinates represent dimensions fo data, typically 0 and 1 are used. returns a scatter plot of your data as classified by the best classifer loop.
+	- takes your data, and 4 coordinates for the data you want to plot. The 4 coordinates represent dimensions fo data, typically 0 and 1 are used. returns a scatter plot of your data as classified by the best classifier loop.
+
+## Command line
+If you want to run a quick classification analysis then you can use the library from the command line. Either producing a plot of your data or an array of classifications matching your data. The command line can be controlled with the following options: 
+
+Options:
+  -fit_predict, -pr / -fit_plot, -pl
+                                  Choose to run a prediction or a plot of your
+                                  data
+
+  -cl, --clusters INTEGER         Set the number of clusters default=2
+                                  [default: 2]
+
+  -t, --tolerance FLOAT           Tolerance level for fitting centroids,
+                                  default=0.001  [default: 0.001]
+
+  -m, --max_it INTEGER            Max number of iterations to converge
+                                  centroids, default=500  [default: 500]
+
+  -e, --error_loops INTEGER       Number of tries to get best centroid start
+                                  point, default=1  [default: 1]
+
+  -p, --plus_plus / -s, --standard
+                                  Choose between standard Kmeans or Kmeans++,
+                                  default is standard  [default: False]
+
+  -f, --file                 Enter the file path, the file should be a
+                                  csv and contain numbers only
+  --help                          Show this message and exit.
