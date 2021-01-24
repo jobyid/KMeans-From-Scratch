@@ -33,7 +33,6 @@ class KMeans:
         for i in range(self.k):
             self.centroids[i] = sample[i]
             # While looping makes the classes dict as well for use later
-            self.classes[i] = []
 
     def find_centroids_plus_plus(self, data):
         # pick centroids that are evenly spread
@@ -56,7 +55,6 @@ class KMeans:
             for i in range(self.k):
                 self.centroids[i] = centroids[i]
                 # While looping makes the classes dict as well for use later
-                self.classes[i] = []
 
     def find_point_distance(self, data):
         # Loop through the data to compare each point to the centroids
@@ -86,8 +84,6 @@ class KMeans:
         self.fitted = True
         # loop through validation loops
         for x in range(self.vl):
-            self.classes.clear()
-            self.centroids.clear()
             # make centroids
             if self.k_plus:
                 self.find_centroids_plus_plus(data)
@@ -95,6 +91,9 @@ class KMeans:
                 self.find_centroids(data)
             #loop through the iterations moving centroids
             for it in range(self.mi):
+                self.classes = {}
+                for i in range(self.k):
+                    self.classes[i] = []
                 self.find_point_distance(data)
                 isOptimal = self.recalculate_centroids()
                 if isOptimal:
